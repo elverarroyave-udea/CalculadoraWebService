@@ -5,7 +5,7 @@
     <client name="calculator">
       <wsdl-url>http://www.dneonline.com/calculator.asmx?WSDL</wsdl-url>
       <local-wsdl-file>www.dneonline.com/calculator.asmx.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">wsdl</package-name>
+      <package-name>org.tempuri</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -32,9 +32,37 @@
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
         </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="calculator_1">
+      <wsdl-url>http://www.dneonline.com/calculator.asmx?WSDL</wsdl-url>
+      <local-wsdl-file>www.dneonline.com/calculator.asmx.wsdl</local-wsdl-file>
+      <package-name>org.tempuri</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
         <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>wsdl</wsimport-option-value>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://www.dneonline.com/calculator.asmx?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

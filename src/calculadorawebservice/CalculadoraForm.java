@@ -5,6 +5,8 @@
  */
 package calculadorawebservice;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -147,8 +149,15 @@ public class CalculadoraForm extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        int number1 = Integer.parseInt(num1.getText());
-        int number2 = Integer.parseInt(num2.getText());
+        
+        int number1 = 0;
+        int number2 = 0;
+        try{
+                number1 = Integer.parseInt(num1.getText());
+                number2 = Integer.parseInt(num2.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error en los datos ingresados.");
+        }
         
         int result = 0;
         
@@ -165,7 +174,11 @@ public class CalculadoraForm extends javax.swing.JFrame {
                 result = multiply(number1, number2);
             break;
             case "Divide":
-                result = divide(number1, number2);
+                try{
+                    result = divide(number1, number2);
+                }catch(Exception e ){
+                    JOptionPane.showMessageDialog(null, "Error al realizar la operación");
+                }
             break;
         }
             
@@ -231,5 +244,5 @@ public class CalculadoraForm extends javax.swing.JFrame {
         wsdl.Calculator service = new wsdl.Calculator();
         wsdl.CalculatorSoap port = service.getCalculatorSoap();
         return port.divide(intA, intB);
-    }
+    }   
 }
